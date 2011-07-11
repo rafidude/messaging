@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title Messaging POC
+    meta name="keywords" content="proof of concept"
+
+  body
+    h1 Messaging POC
+    #content.example1
+      p Nest by indentation
+
+    = yield
+    - users = [{name: 'user1'}, {name: 'user2'}, {name: 'user3'}]
+    - unless users.empty?
+      table
+        - for user in users do
+          tr
+            td = user[:name]
+            td
+              a href="/inbox/#{user[:name]}" MessageBox
+    - else
+      p No users found
+
+    #footer
+      | Copyright &copy; 2011 Dummy Template
+
+    script
+      | $(content).do_something();
