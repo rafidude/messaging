@@ -2,6 +2,9 @@ require 'redis'
 
 class DB
   def self.initialize_redis
+    # ENV["REDISTOGO_URL"] = 'redis://username:password@my.host:6789'
+    #     uri = URI.parse(ENV["REDISTOGO_URL"])
+    #     REDIS = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
     @redis = Redis.new
   end
   

@@ -1,5 +1,6 @@
-require 'em-redis'
+require 'eventmachine'
 require './db'
+
 EM.run do
   EM.add_periodic_timer(2) do
     t1 = Time.now
