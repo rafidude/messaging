@@ -1,11 +1,15 @@
 require 'redis'
+require 'uri'
 
 class DB
   def self.initialize_redis
-    # ENV["REDISTOGO_URL"] = 'redis://username:password@my.host:6789'
-    #     uri = URI.parse(ENV["REDISTOGO_URL"])
-    #     REDIS = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
-    @redis = Redis.new
+    #ENV["REDISTOGO_URL"] = 'redis://redistogo:50413146199119e2b7f2eca2c1e87f9e@catfish.redistogo.com:9465/'
+    if ENV["REDISTOGO_URL"]
+      uri = URI.parse(ENV["REDISTOGO_URL"])
+      @redis = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
+    else
+      @redis = Redis.new
+    end
   end
   
   def self.db

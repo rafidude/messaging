@@ -29,7 +29,8 @@ def send_test_message(number_of_messages)
   end
 end
 
-count = 2000
+#count = 2000
+count = 2
 send_test_message(count)
 puts "Sent #{count} messages"
 
