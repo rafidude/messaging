@@ -1,2 +1,2 @@
-This is just a POC
-Does NOT work yet
+Simple messaging app based on Redis.
+Just a POC. Not tested thoroughly.
